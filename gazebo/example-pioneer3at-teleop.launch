@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find amr_robots_gazebo)/example-world.launch" />
+  <include file="$(find amr_robots_gazebo)/spawn-pioneer3at.launch" />
+  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard"
+        type="teleop_twist_keyboard.py">
+    <remap from="cmd_vel" to="sim_p3at/cmd_vel" />
+  </node>
+</launch>
